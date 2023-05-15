@@ -1,0 +1,9 @@
+[submodule "icon_customizer"]
+	path = icon_customizer
+	url = https://github.com/intrntbrn/icon_customizer.git
+[submodule "log"]
+	path = log
+	url = https://github.com/rxi/log.lua
+[submodule "inspect"]
+	path = inspect
+	url =https://github.com/kikito/inspect.lua	
