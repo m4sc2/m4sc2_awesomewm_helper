@@ -84,7 +84,7 @@ require('helpers.signal.signals.volume-signal'){}
 ```
 
 ### Signals
-name|type|desription
+name|type|description
 ---|---|---
 broker::volume             | signal_emit      | list            
 broker::volume_change_sink | signal_connect   | change default device   
@@ -106,7 +106,7 @@ require('helpers.signal.signals.cpu-signal'){}
 ```
 
 ### Signals
-name|type|desription
+name|type|description
 ---|---|---
 broker::cpu | signal_emit|provides current cpu load         
  
@@ -125,6 +125,6 @@ require('helpers.signal.signals.networl-signal'){}
 ```
 
 ### Signals
-name|type|desription
+name|type|description
 ---|---|---
 broker::network|signal_emit|list devices and tx/rx values
