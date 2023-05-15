@@ -93,9 +93,9 @@ function signalBroker.emit_signal(name, val)
 end
 
 -------------------
---  registers an signal which will be emited timed 
+--  registers an signal which will be emitted timed 
 --
--- The timer will be started as soon the first client is connected to the signal.
+-- TODO The timer will be started as soon the first client is connected to the signal.
 -- If all clients where disconnected the timer will be suspended until the next 
 -- client connects to the signal again.
 --
@@ -109,15 +109,15 @@ end
 --  !! TODO start and stop timer in case no one is connected to the signal
 ---
 function signalBroker.register_timed_signal(name, functionToCall, timeout)
-    emited_function = function()
+    emitted_function = function()
         local value = functionToCall()
         log.trace(inspect(value))
         signalBroker.emit_signal(name, value)          
     end
-    local localtimer = timer({ timeout = timeout, callback = emited_function, call_now = true })
+    local localtimer = timer({ timeout = timeout, callback = emitted_function, call_now = true })
     localtimer:start()
 
-    localtimer:connect_signal("timeout", emited_function)
+    localtimer:connect_signal("timeout", emitted_function)
     localtimer:emit_signal("timeout")    
 end
 
