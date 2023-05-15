@@ -24,8 +24,8 @@ local filesystem = require("helpers.filesystem")
 
 local function LIST_DEVICES_CMD() return [[sh -c "pactl -f json list sinks"]] end
 local function DEFAULT_SINK_CMD() return [[sh -c "pactl get-default-sink"]] end
-local function INCREASE_VOLUME_CMD(device, step) return string.format('pactl set-sink-volume %s +%s%', device, step) end
-local function DECREASE_VOLUME_CMD(device, step) return string.format('pactl set-sink-volume %s -%s%', device, step) end
+local function INCREASE_VOLUME_CMD(device, step) return string.format('pactl set-sink-volume %s +%s%%', device, step) end
+local function DECREASE_VOLUME_CMD(device, step) return string.format('pactl set-sink-volume %s -%s%%', device, step) end
 local function MUTE_VOLUME_CMD(device) return string.format('pactl set-sink-mute %s toggle', device) end
 local function CHANGE_DEFAULT_SINK(device) return string.format([[sh -c 'pactl set-default-sink "%s"']], device) end
 
